@@ -18,6 +18,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.25.0-GA</version>
+		</dependency>
+
+
 		<!-- Dependency for Spring Web MVC to be added -->
 
 		<dependency>
@@ -27,12 +34,35 @@
 		</dependency>
 
 		<!-- Dependency for jaxb-api to be added(if using JDK9) -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 
 		<!-- Dependency for jaxb-impl to be added(if using JDK9) -->
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.2</version>
+		</dependency>
 
 		<!-- Dependency for commons-dbcp to be added -->
+		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 
 		<!-- Dependency for jstl to be added -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 
 
 		<dependency>
@@ -44,13 +74,37 @@
 
 		<!-- Dependency for spring orm to be added -->
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>5.1.9.RELEASE</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.16.Final</version>
 		</dependency>
 
+
 		<!-- Dependency for mysql-connector to be added -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.17</version>
+		</dependency>
+
+		<!-- hibernate entity manager-->
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.5.Final</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -58,12 +112,13 @@
 			<version>5.0.4.RELEASE</version>
 		</dependency>
 
-    	<dependency>
+		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
-			<version>2.7.13</version>
+			<version>3.0.0</version>
 			<scope>test</scope>
 		</dependency>
+
 
 	</dependencies>
 	<build>

@@ -1,6 +1,12 @@
 package com.stackroute.keepnote.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 /*This class will contain bean for viewresolver
  * Define the following annotations:
@@ -11,9 +17,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @EnableWebMvc - Adding this annotation to an @Configuration class imports the Spring MVC 
  * 				   configuration from WebMvcConfigurationSupport 
  * */
-
+@Configuration
+@ComponentScan(basePackages = {"com.stackroute.keepnote"})
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
+	@Bean
+	public InternalResourceViewResolver resolver() {
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		resolver.setViewClass(JstlView.class);
+		resolver.setPrefix("/WEB-INF/views/");
+		resolver.setSuffix(".jsp");
+		return resolver;
+	}
 	/*
 	 * Define the bean for view resolver so that it can be used to resolve the JSP
 	 * files which are existing in /WEB-INF/views folder. A ViewResolver is capable

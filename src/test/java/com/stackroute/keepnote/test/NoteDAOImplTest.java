@@ -79,17 +79,15 @@ public class NoteDAOImplTest {
 	@Test
 	@Rollback(true)
 	public void testGetNoteById() {
-
 		noteDAO.saveNote(note);
 		Note noteData = noteDAO.getNoteById(note.getNoteId());
-		assertEquals(note, noteData);
+		assertEquals(note,noteData);
 		noteDAO.deleteNote(note.getNoteId());
-
 	}
 
 	@Test
 	@Rollback(true)
-	public void testUpdateNote() {
+	public void testUpdateNote(){
 		noteDAO.saveNote(note);
 		Note noteData = noteDAO.getNoteById(note.getNoteId());
 		noteData.setNoteContent("Unit testing for DAO layer");
@@ -100,7 +98,6 @@ public class NoteDAOImplTest {
 		assertEquals("Unit testing for DAO layer", updatedNote.getNoteContent());
 		assertEquals(true, status);
 		noteDAO.deleteNote(updatedNote.getNoteId());
-
 	}
 
 	@Test
